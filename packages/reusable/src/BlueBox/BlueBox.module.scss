@@ -1,0 +1,31 @@
+@import "src/scss/variables";
+
+.blueBoxHeader {
+  min-height: 50px;
+  padding: 12px 10px 10px;
+  background: $accent;
+  color: $white;
+  font-size: 19px;
+  font-family: "Meta Web Bold";
+  font-weight: normal;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    font-size: 19px;
+  }
+}
+
+.blueBoxContent {
+  border: 1px solid $light-gray;
+  border-top: none;
+  padding: 10px;
+  @media #{$tablet} {
+    padding: 20px;
+  }
+}

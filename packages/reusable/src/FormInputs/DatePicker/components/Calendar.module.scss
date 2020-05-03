@@ -1,0 +1,201 @@
+@import "src/scss/variables";
+@import "variables";
+
+.root {
+  font-family: "Meta Web Normal";
+
+  @media #{$mobile_only} {
+    display: block;
+    justify-content: center;
+  }
+
+  &.hasHorizontalLegend {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media #{$mobile_only} {
+      display: block;
+    }
+  }
+}
+
+.asGrid {
+  flex-wrap: wrap;
+
+  & > div {
+    margin-bottom: 1rem;
+  }
+}
+
+.months {
+  display: flex;
+
+  @media #{$mobile_only} {
+    display: block;
+  }
+}
+
+.month {
+  max-width: $monthWidth;
+  width: 100%;
+  flex-grow: 0;
+
+  @media #{$mobile_only} {
+    margin-bottom: $monthMargin;
+    max-width: 100%;
+  }
+
+  &:nth-child(odd) {
+    margin-right: $monthMargin;
+
+    @media #{$mobile_only} {
+      margin-right: 0;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: $accent;
+  color: white;
+  height: 40px;
+}
+
+.monthname {
+  font-family: "Meta Web Bold";
+  padding: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1;
+  margin: 0 auto;
+}
+
+.pagelink {
+  background: none;
+  border: 0;
+  color: white;
+  padding: 0 15px;
+  height: 100%;
+}
+
+.grid {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid $light-gray;
+  border-top: 0;
+  width: 100%;
+
+  th,
+  td {
+    padding: 0;
+  }
+}
+
+.weekdays {
+  background-color: $ice-blue;
+  text-transform: uppercase;
+  font-weight: normal;
+
+  th {
+    font-family: "Meta Web Medium";
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+    width: 14.28%;
+    height: 38px;
+    text-decoration: none;
+
+    abbr {
+      text-decoration: none;
+    }
+  }
+}
+
+.days {
+  td {
+    width: 14.28%;
+    padding-top: 14.28%;
+    position: relative;
+
+    &:focus {
+      outline: 1px solid $links;
+    }
+  }
+
+  button {
+    font-size: 15px;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.calendarHelpText {
+  margin-top: 10px;
+  max-width: $monthWidth;
+  width: 100%;
+  font-size: 13px;
+  color: $dark-gray;
+}
+
+.isLarge {
+  @media #{$tablet} {
+    .months {
+      max-width: $largeMonthWidth * 2 + $monthMargin;
+    }
+
+    .month {
+      max-width: $largeMonthWidth;
+      width: 100%;
+
+      @media #{$mobile_only} {
+        max-width: 100%;
+      }
+    }
+
+    .calendarHelpText {
+      max-width: $largeMonthWidth;
+      width: 100%;
+    }
+
+    .header {
+      height: 50px;
+    }
+
+    .monthname {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .pagelink {
+      padding: 0 35px;
+    }
+
+    .days {
+      td {
+        padding-top: 12%;
+      }
+
+      button {
+        font-size: 15px;
+      }
+    }
+
+    .weekdays {
+      th {
+        height: 52px;
+        font-size: 18px;
+      }
+    }
+  }
+}

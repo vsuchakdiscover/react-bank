@@ -1,0 +1,137 @@
+@import "src/scss/variables";
+
+.button[data-reach-menu-button] {
+  display: inline-block;
+  position: relative;
+  min-height: 36px;
+  text-decoration: none;
+  border-radius: 4px;
+  min-width: 74px;
+  padding: 4px 20px 0;
+  border: none;
+  font-family: "Meta Web Bold";
+
+  // Button is open
+  &[aria-expanded="true"] {
+    img {
+      transform: rotate(-180deg);
+    }
+  }
+
+  img {
+    transition: transform 150ms ease-out;
+    margin-left: 10px;
+  }
+
+  @media #{$mobile_only} {
+    width: 100%;
+  }
+}
+
+.primary {
+  background: $orange;
+  color: $white;
+  font-size: 19px;
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    background: $dark-orange;
+  }
+}
+
+.ghost {
+  background: $white;
+  border: 2px solid $links;
+  color: $links;
+  font-size: 19px;
+
+  &:hover,
+  &:focus {
+    background: $legacy-bg-gray;
+  }
+}
+
+.link {
+  background: transparent;
+  border: none;
+  color: $links;
+  font-size: 15px;
+  min-height: auto;
+  padding: 0;
+  font-family: "Meta Web Normal";
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    text-decoration: underline;
+  }
+
+  @media #{$mobile_only} {
+    width: auto;
+  }
+}
+
+.closex {
+  background: $white;
+  color: $links;
+  border: none;
+  min-height: auto;
+  padding: 20px;
+  font-family: "Arial";
+  min-width: auto;
+  position: relative;
+  border-radius: 0;
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 1px;
+    background: $links;
+    display: block;
+    top: 13px;
+    left: 20px;
+    transform: rotate(45deg);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    background: $links;
+    display: block;
+    top: 20px;
+    left: 13px;
+    transform: rotate(45deg);
+  }
+
+  @media #{$mobile_only} {
+    width: auto;
+  }
+}
+
+.menuList {
+  padding: 0;
+  border: solid 1px #dbdbdb;
+  border-bottom: none;
+  background: $white;
+}
+
+.menuItem {
+  line-height: 19px;
+  padding: 0px;
+  border-bottom: solid 1px #dbdbdb;
+  font-size: 15px;
+  color: $copy;
+  padding: 18px 0px 15px 10px;
+  font-family: "Meta Web Normal";
+
+  &:hover,
+  &[data-selected] {
+    color: white;
+    background-color: $dark-gray;
+    text-decoration: none;
+  }
+}

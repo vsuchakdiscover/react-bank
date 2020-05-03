@@ -1,0 +1,60 @@
+@import "src/scss/variables";
+.root {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 68px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  background-color: $white;
+  &:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 10px;
+    top: 0;
+    left: 0;
+    @media #{$mobile_only} {
+      width: 5px;
+    }
+  }
+  &:after {
+    content: "";
+    min-height: inherit;
+    font-size: 0;
+  }
+}
+
+.contentWrapper {
+  padding-left: 20px;
+  margin-bottom: 0;
+  line-height: 1.5;
+  margin-top: 25px;
+}
+
+.success {
+  &:before {
+    background-color: $success;
+  }
+}
+
+.warning {
+  &:before {
+    background-color: $warning;
+  }
+}
+
+.error {
+  &:before {
+    background-color: $error;
+  }
+}
+
+.neutral {
+  &:before {
+    background-color: $dark-gray;
+  }
+}
+
+.ref:focus {
+  @extend %custom-focus;
+}

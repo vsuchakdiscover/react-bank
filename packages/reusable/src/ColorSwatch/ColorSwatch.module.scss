@@ -1,0 +1,51 @@
+.swatchBox {
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 2px;
+}
+
+.swatchButton {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  font-family: inherit;
+  font-size: 14px;
+  color: inherit;
+  text-align: left;
+  background-color: transparent;
+  -webkit-appearance: none;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 4px 0px;
+  margin: 0px;
+  padding: 0px;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 0px;
+  transition: all 0.125s ease 0s;
+}
+
+.swatchColor {
+  height: 100px;
+  width: 100%;
+  border-radius: 2px 2px 0px 0px;
+  transition: all 0.1s ease 0s;
+}
+
+.swatchDetail {
+  padding: 8px;
+
+  code {
+    font-family: "Roboto Mono", monospace;
+    color: rgb(79, 111, 143);
+    font-size: 14px;
+  }
+}
+
+.swatchName {
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 4px;
+}

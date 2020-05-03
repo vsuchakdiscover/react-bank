@@ -1,0 +1,18 @@
+@import "../../../../reusable/src/scss/variables";
+
+.amountByLine {
+  font-size: 13px;
+  color: $dark-gray;
+  display: block;
+  line-height: 1;
+}
+
+.amountByLineHover {
+  span {
+    color: $white;
+  }
+}
+
+button .amountByLine {
+  display: none;
+}

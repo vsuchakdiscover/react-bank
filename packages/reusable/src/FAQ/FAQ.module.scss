@@ -1,0 +1,60 @@
+@import "src/scss/variables";
+
+.descriptionList {
+  padding: 20px 0;
+  margin: 0;
+  border-bottom: solid 1px $light-gray;
+
+  &:first-of-type {
+    border-top: solid 1px $light-gray;
+  }
+
+  @media #{$tablet} {
+    padding: 30px 0;
+  }
+}
+
+.term {
+  line-height: 1;
+}
+
+.description {
+  margin: 0;
+
+  @media #{$tablet} {
+    padding-left: 30px;
+  }
+}
+
+.descriptionInner {
+  padding-top: 20px;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.btn {
+  text-align: left;
+  display: block;
+  line-height: 22px;
+}
+
+.expandIcon {
+  width: 10px;
+  margin-right: 20px;
+}
+
+.question {
+  width: calc(100% - 30px);
+}
+
+.question,
+.expandIcon {
+  float: left;
+}
+
+.disclaimer {
+  color: $dark-gray;
+  font-size: 13px;
+}

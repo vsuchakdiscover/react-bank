@@ -1,0 +1,89 @@
+@import "src/scss/variables";
+
+.container {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+
+  &.hasLabelAbove {
+    margin-top: 10px;
+
+    input {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &:after {
+    content: "";
+    min-height: inherit;
+    font-size: 0;
+  }
+
+  @media #{$tablet} {
+    max-width: 300px;
+  }
+}
+
+.container input {
+  width: 100%;
+  border: solid 1px $light-gray;
+  outline: 0;
+  font-size: 15px;
+  padding: 21px 10px 8px;
+  height: 48px;
+  z-index: 99;
+  line-height: 19px;
+  color: $copy;
+  transition: box-shadow 150ms ease-out, border 150ms ease-out;
+
+  &.error {
+    border: solid 1px $error;
+  }
+
+  &.focused {
+    box-shadow: 0 0 4px 1px rgba(76, 165, 221, 0.39);
+    border: solid 1px #4ca5dd;
+  }
+}
+
+.label {
+  position: absolute;
+  left: 10px;
+  top: 17px;
+  line-height: 15px;
+  font-size: 15px;
+  margin: 0;
+  color: $dark-gray;
+  z-index: 7;
+  transition: transform 150ms ease-out, font-size 150ms ease-out,
+    -webkit-transform 150ms ease-out;
+
+  &:hover {
+    cursor: text;
+  }
+
+  &.focused {
+    font-size: 12px;
+    transform: translateY(-75%);
+  }
+}
+
+.errorIcon {
+  padding-left: 10px;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.labelAboveInput {
+  margin-top: 15px;
+  margin-bottom: 0;
+  color: $dark-gray;
+}

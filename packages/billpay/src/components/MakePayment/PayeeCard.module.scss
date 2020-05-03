@@ -1,0 +1,89 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root {
+  margin-bottom: 20px;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  font-weight: bold;
+}
+
+.payeeName {
+  padding-right: 10px;
+}
+
+.ebillLink {
+  &:hover,
+  &:focus {
+    span {
+      text-decoration: none;
+    }
+  }
+  span {
+    padding-right: 10px;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.accordionContent {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  @media #{$tablet} {
+    padding-left: 35px;
+  }
+  fieldset {
+    width: 100%;
+  }
+  &.accordionFlush {
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    margin-top: -20px;
+  }
+}
+
+.payeeRadioOptions {
+  padding-bottom: 5px;
+}
+
+.radioSubfield {
+  margin-top: -15px;
+  margin-bottom: 25px;
+  @media #{$tablet} {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% - 34px);
+  }
+}
+
+.autoPayRadio {
+  span {
+    display: flex;
+    button {
+      padding: 0;
+      min-height: auto;
+      margin-left: 5px;
+      margin-top: -2px;
+    }
+  }
+}
+
+.separator {
+  border-left: 1px solid $light-gray;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.tooltipHeader {
+  margin-bottom: 10px;
+  font-size: 19px;
+}

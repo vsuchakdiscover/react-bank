@@ -1,0 +1,38 @@
+# A modified version of https://github.com/cypress-io/cypress-example-docker-circle
+# and https://raw.githubusercontent.com/cypress-io/cypress-example-kitchensink/master/basic/circle.yml
+# This was suggested by https://docs.cypress.io/guides/guides/continuous-integration.html#CircleCI
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      # the Docker image with Cypress dependencies
+      # Available images: https://github.com/cypress-io/cypress-docker-images
+      - image: cypress/included:4.4.0
+    environment:
+      ## this enables colors in the output
+      TERM: xterm
+    steps:
+      - checkout
+      # restore folders with npm dependencies and Cypress binary
+      # - restore_cache:
+      #     keys:
+      #       - cache-{{ checksum "package.json" }}
+      # install npm dependencies and Cypress binary
+      # if they were cached, this step is super quick
+      # - run:
+      #     name: Install dependencies
+      #     command: npm ci
+      # save npm dependencies and Cypress binary for future runs
+      # - save_cache:
+      #     key: cache-{{ checksum "package.json" }}
+      #     paths:
+      #       - ~/.npm
+      #       - ~/.cache
+      - run:
+          name: Build and test
+          command: npm ci && npm run bootstrap && npm run lint-and-build-lib && npm run test
+      - store_test_results:
+          path: multiple-results
+      - store_artifacts:
+          path: cypress/screenshots

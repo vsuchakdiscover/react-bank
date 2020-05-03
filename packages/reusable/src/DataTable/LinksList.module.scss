@@ -1,0 +1,41 @@
+@import "src/scss/variables";
+
+.root {
+  font-family: "Meta Web Normal";
+  font-weight: normal;
+
+  a,
+  button {
+    color: $links;
+    position: relative;
+    display: inline-block;
+    padding: 10px 19px;
+    margin-bottom: 0;
+    line-height: 15px;
+    border-radius: 0;
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 2px;
+      background: $light-gray;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0px;
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.links {
+  display: inline-block;
+}
+
+.links a:first-child {
+  padding-left: 0;
+}

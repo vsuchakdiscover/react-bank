@@ -1,0 +1,85 @@
+@import "src/scss/variables";
+
+.root {
+  border: 1px solid $error;
+  padding: 10px;
+}
+
+.label {
+  margin-bottom: 0;
+  font-family: "Meta Web Normal";
+  font-size: 15px;
+  display: flex;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    border: 1px solid $light-gray;
+    background: $white;
+    flex: 0 0 24px;
+  }
+
+  &.isFocused {
+    &:before {
+      /* per https://stackoverflow.com/questions/20609485/what-is-the-default-style-of-the-blue-focus-outline-in-chrome */
+      outline: 1px dotted #212121;
+      outline: 5px auto -webkit-focus-ring-color;
+    }
+  }
+}
+
+.labelText {
+  padding-top: 3px;
+}
+
+.disabledLabel {
+  color: $dark-gray;
+
+  &:before {
+    background-color: $bg-gray;
+  }
+}
+
+.checkbox {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  z-index: -1;
+  left: 10px;
+  top: 10px;
+  border: none;
+}
+
+.checked:after {
+  content: "";
+  width: 10px;
+  height: 16px;
+  border-bottom: 3px solid $orange;
+  border-right: 3px solid $orange;
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  transform: rotate(35deg);
+}
+
+.disabledCheckbox:after {
+  border-color: $light-gray;
+}
+
+.errorMsg {
+  display: flex;
+  color: $error;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.errorIcon {
+  padding: 0 8px;
+}

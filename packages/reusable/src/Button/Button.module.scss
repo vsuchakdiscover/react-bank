@@ -1,0 +1,115 @@
+@import "src/scss/variables";
+
+.root {
+  display: inline-block;
+  min-height: 36px;
+  text-decoration: none;
+  border-radius: 4px;
+  min-width: 74px;
+  padding: 4px 20px 0;
+  border: none;
+  font-family: "Meta Web Bold";
+
+  @media #{$mobile_only} {
+    width: 100%;
+  }
+}
+
+.primary {
+  background: $orange;
+  color: $white;
+  font-size: 19px;
+
+  &:hover,
+  &:focus {
+    background: #e94d00;
+  }
+}
+
+.ghost {
+  background: $white;
+  border: 2px solid $links;
+  color: $links;
+
+  &:hover,
+  &:focus {
+    background: $legacy-bg-gray;
+  }
+}
+
+.link {
+  background: transparent;
+  border: none;
+  color: $links;
+  font-size: 15px;
+  min-height: auto;
+  padding: 0;
+  font-family: "Meta Web Normal";
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    text-decoration: underline;
+  }
+
+  @media #{$mobile_only} {
+    width: auto;
+  }
+}
+
+.closex {
+  background: transparent;
+  color: $links;
+  border: none;
+  min-height: auto;
+  padding: 20px;
+  font-family: "Arial";
+  min-width: auto;
+  position: relative;
+  border-radius: 0;
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 1px;
+    background: $links;
+    display: block;
+    top: 13px;
+    left: 20px;
+    transform: rotate(45deg);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    background: $links;
+    display: block;
+    top: 20px;
+    left: 13px;
+    transform: rotate(45deg);
+  }
+
+  @media #{$mobile_only} {
+    width: auto;
+  }
+}
+
+.tooltip {
+  display: flex;
+  min-width: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 10px;
+  color: $links;
+  width: auto;
+  background: none;
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    text-decoration: underline;
+  }
+}

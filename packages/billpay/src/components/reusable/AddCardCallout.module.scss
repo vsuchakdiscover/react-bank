@@ -1,0 +1,37 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  align-items: center;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: $ice-blue !important;
+  @media #{$tablet} {
+    flex-direction: row;
+  }
+
+  .addNow {
+    margin-right: 15px;
+    max-width: 415px;
+    @media #{$tablet} {
+      margin-left: auto;
+    }
+  }
+}
+
+.copy {
+  display: flex;
+  align-items: center;
+  @media #{$mobile_only} {
+    margin-bottom: 20px;
+    height: auto;
+  }
+  p {
+    font-size: 19px;
+    margin-bottom: 0;
+    margin-left: 20px;
+  }
+}

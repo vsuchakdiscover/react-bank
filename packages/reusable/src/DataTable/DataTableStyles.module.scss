@@ -1,0 +1,31 @@
+@import "/../../src/scss/variables";
+
+.bold {
+  font-weight: bold;
+}
+
+.grow {
+  width: 100%;
+}
+
+.alignCenter {
+  text-align: right;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.hiddenMobile {
+  @media #{$mobile_only} {
+    display: none;
+  }
+}
+
+.width33 {
+  width: 33.33333%;
+}

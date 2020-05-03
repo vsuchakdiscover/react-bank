@@ -1,0 +1,11 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root {
+  margin-bottom: 10px;
+}
+
+.dateRange {
+  @media #{$tablet} {
+    display: flex;
+  }
+}

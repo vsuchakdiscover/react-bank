@@ -1,0 +1,16 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root {
+  height: auto;
+  border: solid 1px #cae1e1;
+  background-color: $ice-blue;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 20px;
+
+  @media #{$tablet} {
+    align-items: center;
+  }
+}

@@ -1,0 +1,14 @@
+@import "src/scss/variables";
+
+.radioFieldset {
+  legend {
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: normal;
+    font-family: "Meta Web Bold";
+  }
+}
+.radio {
+  margin-bottom: 10px;
+}

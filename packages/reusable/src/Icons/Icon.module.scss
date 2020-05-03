@@ -1,0 +1,21 @@
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url("/images/global/utility-icons.png");
+  background-repeat: no-repeat;
+  height: 0;
+  width: 0;
+  margin-left: 5px;
+}
+
+.warning {
+  background-position: -74px -168px;
+  width: 26px;
+  height: 26px;
+}
+
+.error {
+  background-position: -642px -425px;
+  width: 27px;
+  height: 24px;
+}

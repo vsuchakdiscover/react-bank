@@ -1,0 +1,44 @@
+@import "../../../../reusable/src/scss/variables";
+
+.container {
+  padding: 15px 0px 0px 0px;
+
+  @media #{$tablet} {
+    padding: 20px 20px 0px 20px;
+  }
+}
+
+.iconContainer {
+  min-height: 32px;
+}
+
+.icon {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  &__narrow {
+    width: 58px;
+    height: 32px;
+  }
+}
+
+.title {
+  font-size: 19px;
+  text-align: center;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.copy {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.orangeBorder {
+  width: 43px;
+  height: 4px;
+  display: block;
+  margin: 40px auto;
+  background: $orange;
+}

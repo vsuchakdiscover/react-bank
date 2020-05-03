@@ -1,0 +1,9 @@
+@import "../../../../reusable/src/scss/variables";
+
+.verifySubtitle {
+  padding: 10px 0 20px;
+  margin-bottom: 0px;
+  @media #{$tablet} {
+    padding: 10px 10px 20px 10px;
+  }
+}

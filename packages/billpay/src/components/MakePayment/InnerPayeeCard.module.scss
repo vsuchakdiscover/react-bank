@@ -1,0 +1,103 @@
+@import "../../../../reusable/src/scss/variables";
+
+.input {
+  width: 100%;
+
+  @media #{$tablet} {
+    flex: 0 0 50%;
+    max-width: 350px;
+    padding-right: 20px;
+
+    &:nth-child(2) {
+      padding-right: 0;
+    }
+  }
+
+  @media #{$desktop} {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%; //ie11 support
+
+    &:nth-child(2) {
+      padding-right: 20px;
+    }
+    &:nth-child(3) {
+      padding-right: 0;
+    }
+  }
+}
+
+.note {
+  font-size: 13px;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.regd {
+  color: $dark-gray;
+  button {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    min-height: auto;
+    color: $dark-gray;
+    text-align: left;
+    font-family: "Meta Web Normal";
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.regdTitle {
+  margin-bottom: 10px;
+  display: block;
+  font-size: 19px;
+}
+
+.regdList {
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.autopay {
+  color: $copy;
+  font-size: 13px;
+}
+
+.blueAlert {
+  align-items: flex-start;
+  margin-top: 15px;
+  font-size: 15px;
+  background-color: $accent-light;
+}
+
+.greenDot {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-radius: 12px;
+  background-color: $success;
+}
+
+.ebillLink {
+  &:hover,
+  &:focus {
+    span {
+      text-decoration: none;
+    }
+  }
+  span {
+    padding-right: 10px;
+    position: relative;
+    top: -1px;
+  }
+  margin-top: 10px;
+  position: relative;
+  top: 10px;
+  font-size: 15px;
+}

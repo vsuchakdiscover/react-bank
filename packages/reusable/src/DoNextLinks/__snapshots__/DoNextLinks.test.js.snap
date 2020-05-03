@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders with a custom header 1`] = `
+<div
+  className="root"
+>
+  <p>
+    Custom Header
+  </p>
+  <div
+    className="links"
+  >
+    <a
+      href="#makeABillPayment"
+    >
+      Make a Bill Payment
+    </a>
+    <a
+      href="#managePayees"
+    >
+      Manage Payees
+    </a>
+  </div>
+</div>
+`;
+
+exports[`renders with the default header 1`] = `
+<div
+  className="root"
+>
+  <p>
+    What would you like to do next?
+  </p>
+  <div
+    className="links"
+  >
+    <a
+      href="#makeABillPayment"
+    >
+      Make a Bill Payment
+    </a>
+    <a
+      href="#managePayees"
+    >
+      Manage Payees
+    </a>
+  </div>
+</div>
+`;

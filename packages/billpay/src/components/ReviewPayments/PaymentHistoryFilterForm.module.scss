@@ -1,0 +1,49 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root {
+  padding: 0 18px;
+
+  .input {
+    margin-right: 169px;
+    @media #{$mobile_only} {
+      margin-right: 0;
+    }
+    ul {
+      z-index: 9;
+    }
+  }
+
+  .payFrom ul {
+    z-index: 9;
+  }
+
+  .inputRow {
+    display: flex;
+    @media #{$mobile_only} {
+      display: block;
+    }
+  }
+
+  .actions {
+    margin-top: 20px;
+
+    button:not(:last-child) {
+      margin-right: 5px;
+    }
+
+    @media #{$mobile_only} {
+      button:not(:last-child) {
+        margin-bottom: 30px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .formCheckboxes {
+    margin-bottom: 35px;
+  }
+
+  .formCheckboxChild {
+    margin-right: 50px !important;
+  }
+}

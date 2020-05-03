@@ -1,0 +1,24 @@
+.termsTitle {
+  font-size: 19px;
+}
+
+.termsCopy {
+  font-size: 15px;
+  @media print {
+    padding: 40px !important;
+  }
+}
+
+.printBtn {
+  text-align: right;
+}
+
+.printIcon {
+  background-image: url("./print.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}

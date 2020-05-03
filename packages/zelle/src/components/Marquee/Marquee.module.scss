@@ -1,0 +1,79 @@
+@import "../../../../reusable/src/scss/variables";
+
+.marquee {
+  position: relative;
+  background-image: url("./marquee@2x.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 75%;
+  padding-bottom: 30px;
+
+  @media #{$tablet} {
+    background-image: url("./marquee-large@2x.jpg");
+    background-size: cover;
+    background-position: center top;
+    height: 330px;
+    padding: 0;
+  }
+}
+
+.marqueeImg {
+  width: 100%;
+  display: block;
+}
+
+.reg {
+  font-size: 19px;
+  line-height: 40px;
+
+  @media #{$tablet} {
+    font-size: 24px;
+    line-height: 50px;
+  }
+}
+
+.zelleLogo {
+  width: 63px;
+  height: 26px;
+  margin-bottom: 15px;
+}
+
+.inner {
+  margin: 0 10px;
+
+  @media #{$tablet} {
+    margin: 0 auto;
+    max-width: 960px;
+    width: calc(100% - 100px);
+    display: flex;
+    height: 100%;
+    padding-top: 40px;
+  }
+}
+
+.copyContainer {
+  margin: 0 auto;
+  position: relative;
+
+  @media #{$tablet} {
+    width: 50%;
+    margin: 0;
+    padding-top: 0;
+  }
+}
+
+.header {
+  font-size: 32px;
+  line-height: 40px;
+
+  @media #{$tablet} {
+    font-size: 44px;
+    line-height: 50px;
+  }
+}
+
+.subheader {
+  font-size: 19px;
+  margin-bottom: 0;
+  line-height: 26px;
+}

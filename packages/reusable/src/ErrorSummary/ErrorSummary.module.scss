@@ -1,0 +1,36 @@
+@import "src/scss/variables";
+
+.errorSummary {
+  border-left: 10px solid $error;
+
+  ul {
+    margin: 0 40px 0 65px;
+    padding: 0;
+    color: $links;
+  }
+  li {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.errorSummaryHeader {
+  display: flex;
+  p {
+    margin-left: 20px;
+  }
+}
+
+.root {
+  margin-bottom: 35px;
+  font-family: "Meta Web Normal";
+  a {
+    color: $links;
+    padding: 10px 0;
+  }
+}
+.root:focus {
+  @extend %custom-focus;
+}

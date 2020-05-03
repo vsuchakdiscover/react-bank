@@ -1,0 +1,9 @@
+packages/zelle/build
+packages/reusable/build
+packages/billpay/build
+packages/reusable/storybook-static
+packages/zelle/docs
+packages/billpay/docs
+packages/billpay/storybook-static
+packages/zelle/public/bankac
+packages/reusable/lib

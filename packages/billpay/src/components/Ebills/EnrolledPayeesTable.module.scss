@@ -1,0 +1,103 @@
+@import "../../../../reusable/src/scss/variables";
+
+.positionSpinner {
+  div {
+    margin: 0 auto;
+  }
+}
+
+.unenrollLink {
+  padding-left: 10px;
+}
+
+.blueBoxContent {
+  padding: 0px 10px;
+
+  @media #{$tablet} {
+    padding: 15px 30px;
+  }
+}
+
+.table {
+  tbody {
+    @media #{$tablet} {
+      display: table-row-group;
+    }
+  }
+
+  th {
+    padding-left: 0;
+  }
+
+  td {
+    padding-left: 0;
+  }
+
+  tr {
+    border-top: none;
+    border-bottom: 1px solid $border-gray;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .payeeCell {
+    display: block;
+    width: 100%;
+    @media #{$mobile_only} {
+      padding-bottom: 0;
+      padding-top: 0;
+      dl {
+        margin-bottom: 20px !important;
+        margin-top: 20px !important;
+      }
+    }
+
+    @media #{$tablet} {
+      display: table-cell;
+      width: auto;
+    }
+  }
+
+  .autoPayCell {
+    display: block;
+    width: 100%;
+
+    @media #{$tablet} {
+      display: table-cell;
+      width: auto;
+    }
+    @media #{$mobile_only} {
+      padding-bottom: 0;
+      padding-top: 0;
+      dl {
+        margin-bottom: 20px !important;
+        margin-top: 20px !important;
+      }
+    }
+  }
+
+  .pending {
+    padding-left: 10px;
+
+    button {
+      display: inline;
+      vertical-align: middle;
+      padding-top: 0;
+    }
+  }
+}
+
+.autopayStatusDot {
+  margin-right: 10px;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-radius: 12px;
+  background-color: $light-gray;
+
+  &.on {
+    background-color: $success;
+  }
+}

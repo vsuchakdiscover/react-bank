@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "Meta Web Light";
+  src: url("../fonts/MetaWebPro-Light_modified.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/MetaWebPro-Light_modified.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/MetaWebPro-Light_modified.woff") format("woff"); /* Pretty Modern Browsers */
+}
+@font-face {
+  font-family: "Meta Web Thin";
+  src: url("../fonts/MetaWebPro-Thin_modified.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/MetaWebPro-Thin_modified.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/MetaWebPro-Thin_modified.woff") format("woff"); /* Pretty Modern Browsers */
+}
+@font-face {
+  font-family: "Meta Web Normal";
+  src: url("../fonts/MetaWebPro-Normal.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/MetaWebPro-Normal.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/MetaWebPro-Normal.woff") format("woff"); /* Pretty Modern Browsers */
+}
+@font-face {
+  font-family: "Meta Web Medium";
+  src: url("../fonts/MetaWebPro-Medium.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/MetaWebPro-Medium.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/MetaWebPro-Medium.woff") format("woff"); /* Pretty Modern Browsers */
+}
+@font-face {
+  font-family: "Meta Web Bold";
+  src: url("../fonts/MetaWebPro-Bold.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/MetaWebPro-Bold.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/MetaWebPro-Bold.woff") format("woff"); /* Pretty Modern Browsers */
+}
+
+.meta-web-light {
+  font-family: "Meta Web Light";
+  font-weight: normal;
+}
+
+.meta-web-thin {
+  font-family: "Meta Web Thin";
+  font-weight: normal;
+}
+
+.meta-web-normal {
+  font-family: "Meta Web Normal";
+  font-weight: normal;
+}
+
+.meta-web-medium {
+  font-family: "Meta Web Medium";
+  font-weight: normal;
+}
+
+.meta-web-bold {
+  font-family: "Meta Web Bold";
+  font-weight: normal;
+}
+
+b,
+strong {
+  font-family: "Meta Web Bold";
+  font-weight: normal;
+}

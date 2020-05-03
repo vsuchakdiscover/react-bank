@@ -1,0 +1,240 @@
+@import "src/scss/variables";
+
+.container {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+
+  .chevron {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    z-index: 1;
+    transform: translateY(-50%);
+    transition: transform 150ms ease-out, background 50ms ease-out;
+
+    &.isOpen {
+      transform: translateY(-50%) rotate(-180deg);
+    }
+  }
+
+  &.clean {
+    margin-top: 0;
+
+    .chevron {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      border-radius: 50%;
+
+      &.isOpen {
+        background: $light-gray;
+      }
+    }
+  }
+
+  &:after {
+    content: "";
+    min-height: inherit;
+    font-size: 0;
+  }
+
+  @media #{$tablet} {
+    max-width: 300px;
+  }
+}
+
+.dropdown {
+  position: relative;
+  width: 100%;
+  border: solid 1px $light-gray;
+  background-color: white;
+  border-radius: 0;
+  outline: 0;
+  font-size: 15px;
+  padding: 21px 10px 8px;
+  height: 48px;
+  z-index: 7;
+  line-height: 19px;
+  color: $copy;
+  text-align: left;
+  transition: box-shadow 150ms ease-out, border 150ms ease-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.clean {
+    border: none;
+  }
+
+  &.error {
+    border: solid 1px $error;
+  }
+
+  &.isFocused {
+    box-shadow: 0 0 4px 1px rgba(76, 165, 221, 0.39);
+    border: solid 1px #4ca5dd;
+    outline: none;
+  }
+
+  &.noLabel {
+    padding-top: 10px;
+  }
+}
+
+.menu {
+  max-height: 240px;
+  overflow-y: auto;
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  margin: 0;
+  background: white;
+  padding: 0;
+  z-index: 8;
+
+  &.isOpen {
+    display: block;
+    border-left: 1px solid $light-gray;
+    border-right: 1px solid $light-gray;
+    border-top: none;
+    border-bottom: 1px solid $light-gray;
+  }
+
+  li {
+    list-style-type: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 14px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $light-gray;
+    position: relative;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    &.hover {
+      background-color: $dark-gray;
+      color: white;
+      cursor: pointer;
+    }
+
+    &.hoverSelectAll {
+      cursor: pointer;
+
+      button {
+        text-decoration: underline;
+      }
+    }
+
+    &.hoverlink {
+      cursor: pointer;
+
+      a {
+        @extend %custom-focus;
+        text-decoration: underline;
+      }
+    }
+
+    a {
+      color: $links;
+    }
+  }
+
+  &.clean {
+    &.isOpen {
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      border-bottom: none;
+      box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    li {
+      border-bottom: none;
+    }
+  }
+}
+
+.label {
+  position: absolute;
+  left: 10px;
+  top: 17px;
+  line-height: 15px;
+  font-size: 15px;
+  margin: 0;
+  color: $dark-gray;
+  z-index: 8;
+  transition: transform 150ms ease-out, font-size 150ms ease-out,
+    -webkit-transform 150ms ease-out;
+
+  &:hover {
+    cursor: text;
+  }
+
+  &.isFocused {
+    font-size: 12px;
+    transform: translateY(-75%);
+  }
+
+  &.isHidden {
+    visibility: hidden;
+  }
+}
+
+.errorIcon {
+  padding-left: 10px;
+}
+
+.focusBlocker {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.selectedItemsText {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 20px;
+}
+
+.truncatedBlock {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 205px;
+  padding-right: 5px;
+
+  &.isError {
+    max-width: 165px;
+
+    @media #{$tablet} {
+      max-width: 175px;
+    }
+  }
+
+  @media #{$tablet} {
+    max-width: 170px;
+  }
+}
+
+.visibleBlock {
+  display: inline-block;
+  vertical-align: top;
+}

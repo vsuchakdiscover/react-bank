@@ -1,0 +1,29 @@
+@import "../../../../reusable/src/scss/variables";
+.formCheckboxes {
+  border: 1px solid $light-gray;
+  border-radius: 8px;
+  padding: 20px 0 0 20px;
+  margin-bottom: 30px !important;
+  &.formCheckBoxesError {
+    border-color: $error;
+  }
+  > div button {
+    margin-left: -6px;
+  }
+}
+
+.formCheckboxChild {
+  padding-bottom: 15px;
+  @media #{$tablet} {
+    min-width: calc(50% - 20px);
+  }
+}
+
+.checkboxesError {
+  color: $error;
+  margin-bottom: 30px;
+  margin-top: -20px;
+  span {
+    padding-right: 5px;
+  }
+}

@@ -1,0 +1,31 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: $bg-gray;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  @media #{$tablet} {
+    max-width: 480px;
+  }
+
+  dt {
+    flex: 0 0 75%;
+  }
+
+  dd {
+    flex: 0 0 25%;
+    text-align: right;
+  }
+
+  dt,
+  dd {
+    margin-bottom: 15px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

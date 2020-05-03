@@ -1,0 +1,76 @@
+@import "src/scss/variables";
+@import "variables";
+
+.legend {
+  @media #{$mobile_only} {
+    margin-top: 15px;
+  }
+  max-width: $legendWidth;
+  width: 100%;
+}
+
+.isHorizontal {
+  margin-left: $legendMargin;
+
+  @media #{$mobile_only} {
+    margin-left: 0;
+  }
+}
+
+.title {
+  font-family: "Meta Web Medium";
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.legendItems {
+  padding: 0;
+  margin: 0;
+}
+
+.legendItem {
+  display: flex;
+  margin-bottom: 20px;
+  color: $dark-gray;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.legendIcon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.defaultLegendIcon {
+  border: 1px solid $light-gray;
+}
+
+.selected {
+  background-color: $orange;
+  border: 1px solid $orange;
+}
+
+.available {
+  background-color: $white;
+  border: 1px solid $light-gray;
+}
+
+.unavailable {
+  background-color: $dark-gray;
+  border: 1px solid $light-gray;
+}
+
+.due {
+  background-color: $white;
+  border: 2px solid $links;
+}
+
+.green {
+  background-color: green;
+}

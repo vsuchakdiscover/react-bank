@@ -1,0 +1,55 @@
+@import "src/scss/variables";
+
+.closeButton {
+  position: absolute !important;
+  right: 2px;
+  top: 2px;
+  outline: none !important;
+}
+
+button:hover,
+button:focus {
+  text-decoration: none;
+  p {
+    text-decoration: underline;
+  }
+  .icon {
+    background-color: $accent;
+    color: $white;
+  }
+}
+
+.icon {
+  margin-left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  border: 1px solid $accent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:after {
+    content: "i";
+    display: block;
+    margin-top: 2px;
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+.tooltip__pointer {
+  @media #{$mobile_only} {
+    display: none;
+  }
+  display: block;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  border-left: 3px solid $light-gray;
+  border-top: 3px solid $light-gray;
+  background: #f6fcfc;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}

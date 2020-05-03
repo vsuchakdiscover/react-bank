@@ -1,0 +1,101 @@
+@import "../../../../reusable/src/scss/variables";
+
+.roundedBox {
+  border: 1px solid $light-gray;
+  border-radius: 6px;
+  width: 100%;
+  padding: 30px 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.2);
+
+  @media #{$tablet} {
+    width: calc(50% - 10px);
+    padding: 30px 30px 20px 30px;
+
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &.roundedBoxSingle {
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media #{$tablet} {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      &:first-child {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+.readOnlySpan {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.labelOverride {
+  font-size: 19px;
+  line-height: 28px;
+  margin-bottom: 10px;
+  color: $copy;
+  display: block;
+}
+
+.managePayeesBtn {
+  font-size: 15px;
+  display: block;
+  max-width: 415px;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  @media #{$tablet} {
+    margin: 6px auto;
+  }
+}
+
+.enrollBtnContainer {
+  max-width: 415px;
+
+  @media #{$tablet} {
+    max-width: 300px;
+  }
+
+  @media #{$desktop} {
+    max-width: 415px;
+  }
+
+  &.flexColumn {
+    flex-flow: column;
+  }
+
+  margin: 0 auto;
+}
+
+.enrollBtn {
+  margin: 0 auto;
+  max-width: 415px;
+  display: block;
+}
+
+.enrolledBlueBoxContent {
+  padding: 10px 10px 0 10px;
+}
+
+.eligiblePayeesCombobox {
+  margin-top: 15px !important;
+  margin-bottom: 10px !important;
+
+  @media #{$desktop} {
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+  }
+}

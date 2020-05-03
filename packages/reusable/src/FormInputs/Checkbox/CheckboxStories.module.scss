@@ -1,0 +1,21 @@
+@import "../../scss/variables";
+
+.checkBoxError {
+  display: inline-block;
+  border: 1px solid $error;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.errorMsg {
+  display: flex;
+  color: $error;
+  margin: 0 8px;
+  span {
+    flex: 0 0 auto;
+    &:last-child {
+      padding-left: 10px;
+      padding-top: 5px;
+    }
+  }
+}

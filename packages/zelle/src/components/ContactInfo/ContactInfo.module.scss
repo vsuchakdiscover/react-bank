@@ -1,0 +1,53 @@
+@import "../../../../reusable/src/scss/variables";
+
+.confirmTitle {
+  font-size: 19px;
+  text-align: center;
+}
+
+.confirmSubtitle {
+  font-size: 15px;
+  text-align: center;
+}
+
+.infoBox {
+  background-color: $bg-gray;
+  padding: 20px;
+
+  @media #{$tablet} {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+}
+
+.contactInfoContainer {
+  margin-bottom: 20px;
+}
+
+.editBtn {
+  width: auto;
+  font-size: 15px;
+}
+
+.mobileIcon {
+  display: block;
+  margin: 0 auto;
+}
+
+.reviewCta {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: solid 1px $light-gray;
+}
+
+.contactItem {
+  padding-bottom: 10px;
+}
+
+.contactItemValue {
+  display: inline;
+
+  @media #{$mobile_only} {
+    display: block;
+  }
+}

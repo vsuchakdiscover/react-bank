@@ -1,0 +1,171 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root {
+  .blueBoxContent {
+    padding: 0 10px;
+  }
+
+  .expandableSection {
+    border-bottom: 1px solid $border-gray;
+    margin: 0 -10px;
+    padding: 20px 20px 20px 10px;
+
+    @media #{$mobile_only} {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  .table {
+    @media #{$tablet} {
+      margin-left: 20px;
+      margin-right: 20px;
+      width: calc(100% - 40px);
+    }
+    @media #{$mobile_only} {
+      display: block;
+
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+      }
+
+      td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      td:not(:nth-child(1)):not(:nth-child(2)) {
+        padding-left: 30px;
+        width: 100%;
+      }
+
+      td:nth-child(2) {
+        padding-left: 5px;
+      }
+
+      .expanderCell {
+        display: inline-block;
+        width: 25px;
+        vertical-align: top;
+        margin-top: 3px;
+
+        button {
+          padding: 0;
+          width: 100%;
+        }
+        svg {
+          font-size: 17px;
+        }
+      }
+
+      .deliverByCell {
+        display: inline-block;
+      }
+    }
+  }
+
+  .tableRow {
+    @media #{$mobile_only} {
+      padding: 10px 0;
+      &:first-child {
+        border: 0;
+      }
+    }
+  }
+
+  .deliverByCell {
+    width: 170px;
+  }
+
+  .expandableRowCol1 {
+    width: 30%;
+  }
+
+  .amountCell,
+  .expandableRowCol5 {
+    @media #{$tablet} {
+      text-align: right;
+      width: 100px;
+    }
+  }
+
+  .payeeCell {
+    width: 25%;
+  }
+  .expandableRowCol2,
+  .expandableRowCol3 {
+    width: 30%;
+  }
+
+  .payFromCell {
+    width: 25%;
+  }
+
+  .expandableRow {
+    border-top: 1px solid $border-gray;
+
+    @media #{$mobile_only} {
+      dl {
+        margin-bottom: 0;
+      }
+    }
+
+    @media #{$tablet} {
+      td > div {
+        margin-left: -25px;
+      }
+    }
+  }
+
+  .expandableRowGrid {
+    margin: 0 -15px 10px -15px;
+    padding-left: 10px;
+
+    @media #{$tablet} {
+      display: flex;
+    }
+
+    &:last-child {
+      @media #{$tablet} {
+        border-top: 1px solid $border-gray;
+      }
+      margin-bottom: 0;
+    }
+
+    & > div {
+      padding: 8px 15px;
+    }
+    dd {
+      color: $dark-gray;
+    }
+  }
+
+  .expandableRowCol3.expandableRowCol3 {
+    @media #{$tablet} {
+      padding-left: 23px;
+    }
+  }
+  .expandableRowCol5.expandableRowCol5 {
+    padding-left: 5px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    @media #{$mobile_only} {
+      border-top: 1px solid $light-gray;
+      margin-right: 10px;
+    }
+    @media #{$tablet} {
+      padding-left: 0;
+      margin-left: auto;
+    }
+  }
+
+  .positionSpinner {
+    padding: 100px 0;
+    div {
+      margin: 0 auto;
+    }
+  }
+}

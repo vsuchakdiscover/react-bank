@@ -1,0 +1,214 @@
+@import "../../../../reusable/src/scss/variables";
+
+.column {
+  width: 48%;
+}
+
+.icon {
+  padding-right: 5px;
+}
+
+.operationsColumn {
+  display: none;
+  text-align: right;
+  padding-right: 0;
+
+  @media #{$tablet} {
+    display: block;
+  }
+}
+
+.mobileOperations {
+  display: block;
+  text-align: right;
+  padding-right: 0;
+
+  @media #{$tablet} {
+    display: none;
+  }
+}
+
+.deleteBtn {
+  min-width: auto;
+  @media #{$tablet} {
+    padding-right: 0 !important;
+  }
+}
+
+.deleteOverlay {
+  @media #{$tablet} {
+    max-width: 600px;
+    width: 600px;
+  }
+}
+
+.positionSpinner {
+  div {
+    margin: 0 auto;
+  }
+}
+
+.spinnerMinHeight {
+  min-height: 100px;
+
+  div {
+    margin-top: 50px;
+  }
+}
+
+.expandable {
+  @media #{$tablet} {
+    margin-bottom: -20px;
+  }
+
+  dl {
+    margin-bottom: 30px !important;
+  }
+
+  dd {
+    color: $dark-gray;
+    white-space: normal;
+  }
+}
+
+.ebillsEnroll {
+  display: block;
+  margin-top: 5px;
+  margin-left: 19px;
+}
+
+.break {
+  display: block;
+  padding-left: 25px;
+}
+
+.scheduledList {
+  div:first-child > div:first-child {
+    padding-left: 0px !important;
+  }
+}
+
+.nopayees {
+  margin-bottom: 0;
+  white-space: normal;
+
+  @media #{$tablet} {
+    margin-bottom: 10px;
+    margin-left: -20px;
+  }
+}
+
+.maskedValue {
+  font-size: 8px;
+  color: $dark-gray;
+}
+
+.printRow {
+  margin: 10px 0;
+
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+.printBtn {
+  padding: 10px;
+  text-align: right;
+  float: right;
+}
+
+.payeesBlueBoxContent {
+  padding: 10px 10px 0 10px;
+  @media #{$tablet} {
+    padding: 10px 30px 0;
+  }
+}
+
+.payeesCopy {
+  font-size: 15px;
+  color: $copy;
+  margin-bottom: 0;
+
+  table {
+    table-layout: auto;
+  }
+}
+
+.printTableContainer {
+  .borderBtm {
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 0.5rem;
+
+    &:last-of-type {
+      border: none;
+    }
+  }
+}
+
+@media #{$mobile_only} {
+  tr:first-child {
+    border-top: none;
+  }
+}
+
+.scheduledPaymentsTableContainer {
+  border: 1px solid $light-gray;
+  border-radius: 8px;
+  padding: 10px;
+
+  @media #{$tablet} {
+    th,
+    td {
+      padding-left: 10px;
+      padding-right: 10px;
+      &:first-child {
+        width: 125px;
+      }
+      &:last-child {
+        text-align: right;
+        width: 150px;
+        padding-right: 10px;
+      }
+    }
+  }
+  @media #{$mobile_only} {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    table,
+    tbody,
+    tr,
+    td,
+    th {
+      display: block;
+      width: 100%;
+    }
+    td {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &:before {
+        display: block;
+        font-family: "Meta Web Bold";
+      }
+      &:nth-child(1) {
+        padding-top: 20px;
+        &:before {
+          content: "Deliver By";
+        }
+      }
+      &:nth-child(2) {
+        &:before {
+          content: "Pay From";
+        }
+      }
+      &:nth-child(3) {
+        padding-bottom: 20px;
+        &:before {
+          content: "Amount";
+        }
+      }
+    }
+  }
+}

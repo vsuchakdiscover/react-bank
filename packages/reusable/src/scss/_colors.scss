@@ -1,0 +1,77 @@
+//------------------------------------------------------------
+// Primary Colors
+//------------------------------------------------------------
+$black: #000000;
+$white: #ffffff;
+$orange: #ff6000;
+$dark-orange: #e94d00;
+
+//------------------------------------------------------------
+// Grays
+//------------------------------------------------------------
+$copy: #293033;
+$dark-gray: #63686b;
+$med-gray: #57505f;
+$light-gray: #dbdbdb;
+$border-gray: #e4e4e4;
+$bg-gray: #f2f2f2;
+$border-gray: #e2e2e2;
+$legacy-bg-gray: #f8f8f8;
+
+//------------------------------------------------------------
+// Accent Colors
+//------------------------------------------------------------
+$accent: #00548a;
+$accent-light: #f6fcfc;
+$links: #1e71ac;
+$error: #eb0000;
+$success: #008a25;
+$warning: #ebd22f;
+$plum: #57505f;
+$turqoise-blue: #06abc0;
+$ice-blue: #f6fcfc;
+$light-orange: #ffe7da;
+
+//------------------------------------------------------------
+// Gradients
+//------------------------------------------------------------
+
+$blue-radial-gradient: radial-gradient(circle at 50% 0, $links, $accent 99%);
+
+:export {
+  black: $black;
+  white: $white;
+  orange: $orange;
+  dark-orange: $dark-orange;
+  copy: $copy;
+  dark-gray: $dark-gray;
+  med-gray: $med-gray;
+  light-gray: $light-gray;
+  bg-gray: $bg-gray;
+  legacy-bg-gray: $legacy-bg-gray;
+  accent: $accent;
+  accent-light: $accent-light;
+  links: $links;
+  error: $error;
+  success: $success;
+  warning: $warning;
+  plum: $plum;
+  turqoise-blue: $turqoise-blue;
+}
+
+%custom-focus {
+  box-shadow: 0 0 4px 1px rgba(76, 165, 221, 0.39);
+  border: solid 1px #4ca5dd;
+}
+
+.dark-gray {
+  color: $dark-gray;
+}
+
+.bg-gray {
+  background: $bg-gray;
+}
+
+.copy {
+  color: $copy !important;
+}

@@ -1,0 +1,19 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root {
+  width: 224px;
+  height: 161px;
+  border-radius: 6px;
+  border: dashed 2px $light-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.makePayment {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.47;
+  color: #337bb8;
+}

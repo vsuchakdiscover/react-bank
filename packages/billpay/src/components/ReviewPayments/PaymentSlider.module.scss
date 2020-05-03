@@ -1,0 +1,49 @@
+@import "../../../../reusable/src/scss/variables";
+
+.sliderWrapper {
+  margin-bottom: 15px;
+
+  @media #{$tablet} {
+    margin-bottom: 40px;
+  }
+}
+
+.unstyledBtn {
+  all: unset;
+
+  // Temporary style until new icons provided
+  &.rotated {
+    transform: rotate(180deg);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: none;
+  }
+}
+
+:global(.slick-slider) {
+  &.slickSlider {
+    :global(.slick-track) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    :global(.slick-dots) {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 50px;
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li button:before {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

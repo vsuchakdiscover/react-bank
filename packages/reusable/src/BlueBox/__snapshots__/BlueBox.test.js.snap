@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  aria-label="Blue Box Header"
+  className="root"
+  role="contentinfo"
+  x-ms-format-detection="none"
+>
+  <div
+    className="blueBoxHeader"
+  >
+    Blue Box Header
+  </div>
+  <div
+    className="blueBoxContent"
+  >
+    So many things can go in here!
+  </div>
+</section>
+`;

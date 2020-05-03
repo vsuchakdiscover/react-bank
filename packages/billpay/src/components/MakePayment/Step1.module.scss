@@ -1,0 +1,49 @@
+@import "../../../../reusable/src/scss/variables";
+
+.paymentWarning {
+  max-width: 480px;
+  padding: 20px 20px 20px 0px;
+  align-items: start;
+}
+
+.defaultCard {
+  border: 1px solid #cae1e1;
+  box-shadow: none;
+  background: $accent-light !important;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  .copy {
+    padding-right: 10px;
+    font-size: 15px;
+  }
+  img {
+    margin-right: 20px;
+  }
+  svg {
+    margin-right: 15px;
+  }
+  button {
+    min-width: auto;
+  }
+}
+
+.buttonMax {
+  max-width: 415px;
+}
+
+.addPayee {
+  display: inline-flex;
+  font-size: 15px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  .linkText {
+    padding-left: 5px;
+    padding-top: 1px;
+  }
+}
+
+.successIcon {
+  margin-right: 10px;
+}

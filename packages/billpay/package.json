@@ -1,0 +1,82 @@
+{
+  "name": "billpay",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.2",
+    "match-sorter": "^4.0.2",
+    "node-sass": "^4.13.1",
+    "query-string": "^6.10.1",
+    "react": "^16.12.0",
+    "react-app-rewire-webpack-bundle-analyzer": "^1.1.0",
+    "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.0",
+    "react-slick": "^0.25.2",
+    "reusable": "0.0.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "prestart": "cd ../reusable && npm run build:lib && cd ../billpay",
+    "start": "cross-env REACT_APP_API_BASE_URL=http://localhost:3001 ENABLE_MOCK_API_LOGGER=Y run-p start:dev start:api",
+    "start:ci": "run-p start:dev start:api:ci",
+    "startall": "run-p cy storybook",
+    "start:dev": "cross-env REACT_APP_USE_SCENARIO_SELECTOR=Y react-app-rewired start",
+    "prebuild": "npm run prestart && npm run test:ci && npm run build-storybook",
+    "//build": "Hide autopay in production for now per client request. Keeping enabled elsewhere to avoid it regressing. Webpack bundle analyzer display build details.",
+    "build": "cross-env REACT_APP_HIDE_AUTOPAY=true WEBPACK_BUNDLE_ANALYZER=Y REACT_APP_API_BASE_URL=https://bank.discover.com PUBLIC_URL=/bankac/static/billpay react-app-rewired build",
+    "//build:ci": "Disables source maps to speed build on CI. Keeps scenario selector and mock API settings like development to support automated tests running against the mock API",
+    "build:ci": "cross-env GENERATE_SOURCEMAP=false REACT_APP_USE_SCENARIO_SELECTOR=Y REACT_APP_API_BASE_URL=http://localhost:3001 REACT_APP_USE_MOCK_API=Y PUBLIC_URL=http://localhost:3000 react-app-rewired build",
+    "test": "react-app-rewired test",
+    "test:ci": "cross-env CI=true react-app-rewired test && npm run cy:ci",
+    "eject": "react-scripts eject",
+    "start:api": "cross-env API_CALL_DELAY=250 nodemon --ignore tools/db.json tools/apiServer.js",
+    "start:api:ci": "cross-env API_PORT=3001 node tools/apiServer.js",
+    "prestorybook": "cd ../reusable && npm run build:lib && cd ../billpay",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook --quiet",
+    "cy:open": "cypress open",
+    "cy": "start-server-and-test start http://localhost:3000 cy:open",
+    "cy:run": "cypress run",
+    "//cy:ci": "Run the app in prod build mode, but pointed against mock API for speed and consistent tests. Keep autopay enabled even though its not currently on in production to help assure autopay doesn't regress since we plan to turn it back on soon.",
+    "cy:ci": "start-server-and-test start:prod-with-autopay http://localhost:3000 cy:run",
+    "serve:prod": "serve -l 3000 -s build --cors",
+    "start:prod-without-autopay": "cross-env REACT_APP_HIDE_AUTOPAY=true npm run build:ci && run-p start:api:ci serve:prod",
+    "start:prod-with-autopay": "npm run build:ci && run-p start:api:ci serve:prod"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.9",
+    "@storybook/addon-links": "^5.3.9",
+    "@storybook/addons": "^5.3.9",
+    "@storybook/preset-create-react-app": "^1.5.2",
+    "@storybook/react": "^5.3.9",
+    "@testing-library/cypress": "^6.0.0",
+    "@types/jest": "^25.1.0",
+    "babel-loader": "^8.0.6",
+    "classnames": "^2.2.6",
+    "cross-env": "^6.0.3",
+    "cypress": "4.4.0",
+    "eslint": "^6.8.0",
+    "is-url-external": "^1.0.3",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "react-app-rewired": "^2.1.5",
+    "serve": "^11.3.0",
+    "start-server-and-test": "^1.10.8"
+  },
+  "homepage": "https://bank.discover.com/deposits/web/payments/billpay"
+}

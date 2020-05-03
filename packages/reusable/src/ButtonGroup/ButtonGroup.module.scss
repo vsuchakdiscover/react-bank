@@ -1,0 +1,65 @@
+@import "src/scss/variables";
+
+.root {
+  display: flex;
+  align-items: center;
+  @media #{$mobile_only} {
+    justify-content: center;
+    flex-direction: column;
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.buttonGroupLink {
+  font-family: "Meta Web Normal";
+  flex: 0 0 auto;
+  padding: 0 10px;
+  padding-top: 4px;
+  &:first-child {
+    width: 300px;
+  }
+
+  @media #{$tablet} {
+    position: relative;
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 2px;
+      background: $light-gray;
+      top: 9px;
+      right: 0px;
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  a {
+    color: $links;
+    padding: 7px 10px;
+    display: inline-block;
+    @media #{$tablet} {
+      padding: 10px;
+      padding: 5px 10px;
+    }
+  }
+  button {
+    min-width: 0px;
+    padding: 7px 10px;
+    @media #{$tablet} {
+      padding: 10px;
+      padding: 5px 10px;
+    }
+  }
+}
+
+@media #{$mobile_only} {
+  button + .buttonGroupLink {
+    margin-top: 10px;
+  }
+}

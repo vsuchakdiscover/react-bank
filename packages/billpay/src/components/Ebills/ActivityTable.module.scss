@@ -1,0 +1,205 @@
+@import "../../../../reusable/src/scss/variables";
+
+.printRow {
+  margin: 10px 0;
+
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+.printBtn {
+  padding: 10px;
+  text-align: right;
+  float: right;
+}
+
+.amountDescription {
+  color: $dark-gray;
+  font-style: italic;
+  text-align: left;
+}
+
+.floatRight {
+  float: right;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.table {
+  @media #{$desktop} {
+    width: auto !important;
+  }
+  tbody {
+    display: block;
+
+    @media #{$tablet} {
+      display: table-row-group;
+    }
+    @media #{$mobile_only} {
+      tr:first-child {
+        border-top: none;
+      }
+    }
+  }
+
+  .amountCell {
+    display: block;
+    width: 100%;
+
+    @media #{$mobile_only} {
+      padding-top: 0;
+      padding-left: 35px;
+    }
+
+    @media #{$tablet} {
+      display: table-cell;
+      width: 180px;
+    }
+  }
+
+  .amountHeader {
+    width: 180px;
+    text-align: right;
+  }
+
+  .dueDateCell {
+    width: 100%;
+    display: block;
+    @media #{$mobile_only} {
+      padding-left: 35px;
+      padding-top: 0;
+    }
+
+    @media #{$tablet} {
+      display: table-cell;
+      width: 120px;
+    }
+  }
+
+  .operationCell {
+    text-align: right;
+    width: 320px;
+
+    @media #{$mobile_only} {
+      text-align: left;
+      padding-top: 0;
+      padding-left: 35px;
+
+      a,
+      button {
+        display: block;
+        padding-left: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    @media #{$tablet_only} {
+      width: 100%;
+
+      a,
+      button {
+        display: block;
+        padding-right: 0;
+        text-align: right;
+        width: 100%;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    @media #{$tablet} {
+      a,
+      button {
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .statusCell {
+    width: 100%;
+    display: block;
+
+    @media #{$tablet} {
+      display: table-cell;
+      width: 150px;
+      text-align: right;
+    }
+    @media #{$mobile_only} {
+      padding-top: 0;
+      padding-left: 35px;
+    }
+  }
+
+  .payeeCell {
+    width: 100%;
+
+    @media #{$tablet} {
+      width: 120px;
+    }
+
+    dd {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .emptyPayeeCell {
+    width: 100%;
+
+    @media #{$tablet} {
+      width: 155px;
+    }
+  }
+
+  .expandableRow {
+    td {
+      &:first-child {
+        padding: 0;
+
+        @media #{$tablet} {
+          padding: 0;
+        }
+      }
+    }
+    .dueDateCell {
+      @media #{$mobile_only} {
+        padding-top: 20px;
+      }
+    }
+  }
+}
+
+.positionSpinner {
+  div {
+    margin: 0 auto;
+  }
+}
+
+.blueBoxContent {
+  @media #{$tablet} {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.successBanner {
+  display: flex;
+  padding-bottom: 20px;
+  margin: 10px 0;
+
+  span {
+    padding-right: 10px;
+  }
+}

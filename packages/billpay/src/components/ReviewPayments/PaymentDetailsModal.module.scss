@@ -1,0 +1,64 @@
+@import "../../../../reusable/src/scss/variables";
+
+$bottomRowMargin: 10px;
+
+.root {
+  margin-bottom: 30px;
+  margin-top: 5px;
+  border: 1px solid $light-gray;
+  border-radius: 8px;
+  padding: 10px;
+
+  .iconPadding {
+    padding-left: 10px;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    position: relative;
+
+    @media #{$tablet} {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    dl {
+      flex: 0 1 50%;
+      padding-right: 20px;
+      margin-bottom: 20px;
+
+      dd {
+        color: $dark-gray;
+      }
+    }
+  }
+
+  .actionButtons {
+    display: flex;
+    width: 100%;
+
+    button {
+      width: auto;
+    }
+  }
+}
+
+.printButton {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+
+  @media #{$tablet} {
+    margin-left: auto;
+    position: absolute;
+    bottom: 25px;
+    right: 13px;
+    margin-top: 0;
+  }
+}
+
+.amount {
+  font-size: 32px;
+}

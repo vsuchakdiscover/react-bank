@@ -1,0 +1,9 @@
+@import "src/scss/variables";
+.root {
+  text-decoration: underline;
+  color: $links;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}

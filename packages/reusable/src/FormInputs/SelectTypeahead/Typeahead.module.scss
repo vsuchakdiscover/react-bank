@@ -1,0 +1,60 @@
+@import "src/scss/variables";
+
+.selectWrapper {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  position: relative;
+
+  @media #{$tablet} {
+    max-width: 300px;
+  }
+}
+
+.selectDropdown {
+  padding: 0;
+  margin-top: 0;
+  position: absolute;
+  background-color: white;
+  display: none;
+  width: 100%;
+  max-height: 240px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  outline: 0px;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  z-index: 1;
+
+  &.isOpen {
+    border: solid 1px $light-gray;
+    border-top-width: 0px;
+    display: block;
+  }
+}
+
+.selectInput {
+  width: 100%;
+  height: 48px;
+  padding: 15px 8px;
+  font-size: 15px;
+  color: $dark-gray;
+}
+
+.selectItem {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 0 10px;
+  transition: all 0.3s;
+  height: 48px;
+  min-height: 48px;
+  text-transform: uppercase;
+
+  &.highlighted {
+    background-color: $dark-gray;
+    color: white;
+    cursor: pointer;
+  }
+}

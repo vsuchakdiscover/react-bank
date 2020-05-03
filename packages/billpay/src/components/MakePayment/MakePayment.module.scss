@@ -1,0 +1,125 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root {
+  font-family: "Meta Web Normal";
+
+  &.migrated {
+    max-width: none;
+    text-align: center;
+  }
+}
+
+.subhead {
+  @media #{$tablet} {
+    font-size: 19px;
+    margin-bottom: 50px;
+  }
+}
+
+.bulletList {
+  margin: 0 0 0 12px;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 25px;
+    margin: 0 0 10px 0;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      background: $copy;
+      width: 5px;
+      height: 5px;
+      border-radius: 5px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.hdrReset {
+  font-size: 15px;
+  margin: 30px 0 20px;
+
+  @media #{$tablet} {
+    margin: 50px 0 20px;
+  }
+}
+
+.enrollBoxContain {
+  @media only screen and (min-width: 500px) {
+    display: flex;
+  }
+}
+
+.enrollBox {
+  @media only screen and (min-width: 500px) {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  margin-bottom: 25px;
+  background: $bg-gray;
+  padding: 25px !important;
+
+  p {
+    margin-bottom: 0;
+
+    @media #{$mobile_only} {
+      max-width: 280px;
+    }
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+}
+
+.enrollBtn {
+  display: block !important;
+  margin: 0 auto;
+}
+
+@media #{$mobile_only} {
+  .callouts {
+    justify-content: center;
+
+    li {
+      flex: 0 0 350px;
+      margin-top: 15px;
+    }
+  }
+
+  .migratedContainer {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .alignCheck {
+    align-items: unset;
+    text-align: left;
+  }
+}
+
+.calloutCta {
+  margin: 35px 0 0px;
+  padding-bottom: 15px;
+
+  @media #{$tablet} {
+    margin: 35px 20px 0px 20px;
+  }
+}
+
+.noFundsContainer {
+  max-width: 680px;
+}
+
+.termsLine {
+  max-width: 575px;
+}

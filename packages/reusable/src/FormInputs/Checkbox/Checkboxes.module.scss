@@ -1,0 +1,34 @@
+@import "src/scss/variables";
+
+.root {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.checkboxesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  @media #{$mobile_only} {
+    display: block;
+  }
+}
+
+.checkboxWrapper {
+  &:not(:last-child) {
+    margin-right: 20px;
+    @media #{$mobile_only} {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.labelWrapper {
+  display: flex;
+  label {
+    font-family: "Meta Web Bold";
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+}

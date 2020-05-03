@@ -1,0 +1,92 @@
+@import "src/scss/variables";
+
+.styled-radio {
+  margin-bottom: 0;
+  font-family: "Meta Web Normal";
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+
+  input[type="radio"] {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    z-index: -1;
+    left: 10px;
+    top: 10px;
+    border: none;
+    -webkit-appearance: none;
+  }
+
+  &:before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    margin-right: 10px;
+    box-shadow: 0px 0px 0px 1px rgba(219, 219, 219, 1);
+    background: $white;
+    flex: 0 0 24px;
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.focused {
+  &:before {
+    box-shadow: 0px 0 3px 0px $dark-gray;
+  }
+}
+
+.checked {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: $orange;
+  }
+
+  &.disabled {
+    &:after {
+      background: $light-gray;
+    }
+  }
+}
+
+.disabled {
+  &:before {
+    background-color: $bg-gray;
+  }
+}
+
+.labeltext {
+  padding-top: 3px;
+
+  .disabled & {
+    color: $dark-gray;
+  }
+}
+
+.radio-subfield {
+  margin-left: 34px;
+}
+
+.withTooltip {
+  float: left;
+}
+.tooltip {
+  button {
+    min-height: 0px;
+  }
+}

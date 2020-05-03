@@ -1,0 +1,22 @@
+.container {
+  position: fixed;
+  z-index: 10000;
+  background-color: white;
+  opacity: 0.95;
+  border: solid 1px lightgray;
+  padding: 0 10px;
+
+  a {
+    position: relative;
+  }
+}
+
+.topLeft {
+  left: 0;
+  top: 0;
+}
+
+.bottomRight {
+  bottom: 0;
+  right: 0;
+}

@@ -1,0 +1,73 @@
+{
+  "name": "zelle",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.2",
+    "node-sass": "^4.13.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.0",
+    "reusable": "0.0.1"
+  },
+  "scripts": {
+    "prestart": "cd ../reusable && npm run build:lib && cd ../zelle",
+    "start": "run-p start:dev start:api",
+    "start:dev": "cross-env PORT=3002 REACT_APP_API_BASE_URL=http://localhost:3003 react-app-rewired start",
+    "start:ci": "run-p start:dev start:api:ci",
+    "prebuild": "npm run prestart",
+    "build": "cross-env WEBPACK_BUNDLE_ANALYZER=Y REACT_APP_INCLUDE_HEADER=Y REACT_APP_API_BASE_URL=https://bank.discover.com react-app-rewired build",
+    "build:ci": "cross-env GENERATE_SOURCEMAP=false react-app-rewired build",
+    "test": "react-app-rewired test",
+    "test:ci": "npm run cy:ci",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "eject": "react-scripts eject",
+    "start:api": "cross-env API_CALL_DELAY=500 nodemon --ignore tools/db.json tools/apiServer.js",
+    "start:api:ci": "node tools/apiServer.js",
+    "prestorybook": "cd ../reusable && npm run build:lib && cd ../zelle",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "cy:open": "cypress open",
+    "cy": "start-server-and-test start http://localhost:3002 cy:open",
+    "cy:ci": "start-server-and-test start:prod http://localhost:3002 cy:run",
+    "cy:run": "cypress run",
+    "serve:prod": "serve -l 3002 -s --cors build",
+    "prestart:prod": "cross-env REACT_APP_USE_SCENARIO_SELECTOR=Y REACT_APP_API_BASE_URL=http://localhost:3003 REACT_APP_USE_MOCK_API=Y PUBLIC_URL=http://localhost:3002 npm run build:ci",
+    "start:prod": "run-p start:api:ci serve:prod"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.9",
+    "@storybook/addon-links": "^5.3.9",
+    "@storybook/addons": "^5.3.9",
+    "@storybook/preset-create-react-app": "^1.5.2",
+    "@storybook/react": "^5.3.9",
+    "@testing-library/cypress": "^6.0.0",
+    "babel-loader": "^8.0.6",
+    "classnames": "^2.2.6",
+    "cross-env": "^6.0.3",
+    "cypress": "4.4.0",
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "react-app-rewire-webpack-bundle-analyzer": "^1.1.0",
+    "react-app-rewired": "^2.1.5",
+    "serve": "^11.3.0",
+    "start-server-and-test": "^1.10.7"
+  },
+  "homepage": "https://bank.discover.com/bankac/static/p2ppay",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

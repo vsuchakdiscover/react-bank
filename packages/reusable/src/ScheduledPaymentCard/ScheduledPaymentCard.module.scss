@@ -1,0 +1,28 @@
+@import "src/scss/variables";
+
+.inner {
+  margin: 0 !important;
+}
+
+.date {
+  font-family: "Meta Web Bold";
+  color: $orange;
+  font-size: 19px;
+  text-transform: uppercase;
+  padding: 0;
+
+  @media #{$tablet} {
+    padding: 0 10px;
+  }
+}
+
+.amount {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.msg {
+  @media #{$mobile_only} {
+    padding: 20px 0 0;
+  }
+}

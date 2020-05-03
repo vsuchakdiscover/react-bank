@@ -1,0 +1,126 @@
+@import "../../../../reusable/src/scss/variables";
+
+.tableWrapper {
+  .blueBoxContent {
+    padding: 0 10px 0 10px;
+
+    @media #{$mobile_only} {
+      padding-top: 10px;
+    }
+  }
+
+  .table {
+    @media #{$mobile_only} {
+      display: block;
+
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+      }
+
+      tr:first-child {
+        border-top: 0;
+      }
+
+      td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      td:not(:nth-child(1)):not(:nth-child(2)) {
+        padding-left: 30px;
+        width: 100%;
+      }
+
+      td:nth-child(2) {
+        padding-left: 5px;
+      }
+
+      .deliverByCell {
+        display: inline-block;
+      }
+    }
+  }
+
+  .deliverByCell,
+  .expandableRowCol1 {
+    width: 140px;
+  }
+
+  .amountCell,
+  .expandableRowCol3 {
+    @media #{$tablet} {
+      width: 100px;
+    }
+  }
+
+  .amountCell {
+    @media #{$tablet} {
+      text-align: right;
+    }
+  }
+
+  .expandableRowCol3 {
+    @media #{$tablet} {
+      margin-left: 30px;
+    }
+  }
+
+  .expandableRow {
+    border-top: 1px solid $border-gray;
+
+    @media #{$mobile_only} {
+      dl {
+        margin-bottom: 0;
+      }
+    }
+
+    @media #{$tablet} {
+      td > div {
+        margin-left: -25px;
+      }
+    }
+  }
+
+  .expandableRowContent {
+    @media #{$tablet} {
+      position: relative;
+      padding-bottom: 30px;
+    }
+  }
+
+  .printButton {
+    @media #{$tablet} {
+      position: absolute;
+      bottom: 0;
+      right: -20px;
+    }
+  }
+
+  .expandableRowGrid {
+    display: flex;
+    margin: 0 -15px 10px -15px;
+    border-bottom: 1px solid $border-gray;
+    padding-left: 25px;
+
+    @media #{$mobile_only} {
+      display: block;
+      padding-left: 7px;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    & > div {
+      padding: 8px 15px;
+    }
+
+    dd {
+      color: $dark-gray;
+    }
+  }
+}

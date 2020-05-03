@@ -1,0 +1,76 @@
+@import "../../../../../reusable/src/scss/variables";
+
+.innerForm {
+  @media #{$mobile_only} {
+    margin-left: -35px;
+  }
+}
+
+.buttonMax {
+  max-width: 415px;
+}
+
+.readonlyPayee {
+  span:first-child {
+    font-family: "Meta Web Bold";
+    font-size: 15px;
+    color: $copy;
+  }
+}
+
+.successBanner {
+  display: flex;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  align-items: center;
+
+  @media #{$tablet} {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin: 10px 0;
+  }
+
+  span {
+    padding-right: 10px;
+  }
+}
+
+.warningBox {
+  margin-bottom: 35px;
+  padding-right: 20px;
+
+  p {
+    line-height: 1.5;
+    font-size: 15px;
+    max-width: 730px;
+  }
+}
+
+.ebillCallout {
+  margin-top: 20px;
+  margin: 10px;
+  background: $accent-light;
+  padding: 22px 20px 20px 20px;
+  font-size: 15px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+  .ebillsIcon {
+    padding-right: 8px;
+    position: relative;
+    top: -1px;
+  }
+
+  span {
+    font-family: "Meta Web Bold";
+    flex: 0 auto;
+  }
+
+  a {
+    flex: 0 auto;
+    margin-left: 5px;
+  }
+}
+
+.icon {
+  margin-right: 5px;
+}

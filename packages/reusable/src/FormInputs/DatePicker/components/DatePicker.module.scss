@@ -1,0 +1,96 @@
+@import "src/scss/variables";
+@import "variables";
+
+.isRelative {
+  position: relative;
+}
+
+.hasHorizontalLegend {
+  display: flex;
+
+  @media #{$mobile_only} {
+    display: block;
+    flex-wrap: wrap;
+  }
+}
+
+.calendarTrigger {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  z-index: 7;
+  background: none;
+  border: 0;
+}
+
+input.textInput {
+  padding-right: 35px;
+}
+
+.overlay {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 8;
+
+  &.isLarge {
+    & > div {
+      @media #{$tablet} {
+        padding: 15px $largeOverlayPadding 20px $largeOverlayPadding;
+      }
+    }
+  }
+}
+
+.overlayHorizontalLegend {
+  width: $overlayPadding * 2 + $monthWidth + $legendWidth + $legendMargin;
+}
+
+.overlayTwoMonths {
+  width: $overlayPadding * 2 + $monthWidth * 2 + $monthMargin;
+}
+
+.overlayTwoMonths.overlayHorizontalLegend {
+  $width: $overlayPadding * 2 + $monthWidth * 2 + $monthMargin + $legendWidth +
+    $legendMargin;
+  width: $width;
+
+  @media screen and (min-width: 767px) and (max-width: $width) {
+    width: $overlayPadding * 2 + $monthWidth * 2 + $monthMargin;
+  }
+}
+
+.isLarge {
+  &.overlayHorizontalLegend {
+    width: $largeOverlayPadding * 2 + $largeMonthWidth + $legendWidth +
+      $legendMargin;
+  }
+
+  &.overlayTwoMonths {
+    width: $largeOverlayPadding * 2 + $largeMonthWidth * 2 + $monthMargin;
+  }
+
+  &.overlayTwoMonths.overlayHorizontalLegend {
+    $width: $largeOverlayPadding * 2 + $largeMonthWidth * 2 + $monthMargin +
+      $legendWidth + $legendMargin;
+
+    width: $width;
+    @media screen and (min-width: 767px) and (max-width: $width) {
+      width: $largeOverlayPadding * 2 + $largeMonthWidth * 2 + $monthMargin;
+    }
+  }
+}
+
+.overlayHorizontalLegend,
+.overlayTwoMonths,
+.overlayTwoMonths.overlayHorizontalLegend,
+.isLarge.overlayHorizontalLegend,
+.isLarge.overlayTwoMonths,
+.isLarge.overlayTwoMonths.overlayHorizontalLegend {
+  @media #{$mobile_only} {
+    left: 0;
+    width: 100%;
+    max-width: $overlayPadding * 2 + $largeMonthWidth;
+  }
+}

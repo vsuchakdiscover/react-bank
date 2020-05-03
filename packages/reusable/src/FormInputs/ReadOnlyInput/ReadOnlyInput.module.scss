@@ -1,0 +1,22 @@
+@import "src/scss/variables";
+
+.root {
+  margin-top: 25px;
+
+  button {
+    font-size: 13px;
+    text-decoration: underline;
+  }
+}
+
+.label {
+  font-size: 12px;
+  color: $dark-gray;
+}
+
+.value {
+  display: block;
+  font-size: 15px;
+  line-height: 1;
+  margin-bottom: 18px;
+}

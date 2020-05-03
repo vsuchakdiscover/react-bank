@@ -1,0 +1,64 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root li {
+  padding-top: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+}
+
+.container {
+  border-bottom: solid 1px #dbdbdb;
+
+  &:first-of-type {
+    border-top: solid 1px #dbdbdb;
+  }
+}
+
+.btn {
+  padding: 20px 0;
+  text-align: left;
+}
+
+.expandIcon {
+  width: 10px;
+  margin-right: 20px;
+}
+
+.question,
+.expandIcon {
+  float: left;
+}
+
+.question {
+  width: calc(100% - 30px);
+}
+
+.inner {
+  padding-bottom: 30px;
+
+  @media #{$tablet} {
+    max-width: 960px;
+    width: calc(100% - 100px);
+    margin: 0 auto;
+  }
+}
+
+.disclaimerText {
+  color: #63686b;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.disclaimerNum {
+  position: absolute;
+  left: 0;
+}
+
+.disclaimerContainer {
+  margin-top: 20px;
+  position: relative;
+  padding: 0 10px;
+}

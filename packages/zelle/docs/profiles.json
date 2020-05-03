@@ -1,0 +1,198 @@
+[ GET Profile ]
+GET /api/profiles
+--- HEADERS  ---
+Authorization - Bearer {{token}}     //This could be a cookie.
+----------------
+--- RESPONSE --- HTTP 200
+{
+  "id": "1234567",             // This is the users cif -- shouldnt need to look at this for any reason.
+  "username": "bestUserEver",
+  "name": {
+    "givenName": "WILLIAM",
+    "middleName": "S",
+    "familyName": "GUEDEL",
+    "formatted": "WILLIAM S GUEDEL"
+  },
+  "email": "emailz@gmail.com",
+  "phoneNumbers": {
+    "work": {
+      "category": "work",
+      "countryCode": "1",
+      "number": "2244055108",
+      "ext": "",
+      "formatted": "224-405-5108",
+      "cell": false
+    },
+    "mobile": {
+      "category": "mobile",
+      "countryCode": "1",
+      "number": "5555555555",
+      "formatted": "555-555-5555",
+      "cell": false
+    },
+    "home": {
+      "category": "home",
+      "countryCode": "1",
+      "number": "5558675309",
+      "formatted": "555-867-5309",
+      "cell": false
+    }
+  },
+  "addresses": {
+    "Mailing1": {
+      "category": "Mailing1",
+      "streetAddress": "2500 LAKE COOK ROAD",
+      "extendedAddress": "1C - INNOVATION EAST",
+      "locality": "RIVERWOODS",
+      "region": "IL",
+      "country": "USA",
+      "postalCode": "600153851",
+      "formatted": "2500 LAKE COOK ROAD 1C - INNOVATION EAST\nRIVERWOODS IL 60015-3851\nUSA"
+    },
+    "Mailing2": {
+      "category": "Mailing2",
+      "streetAddress": "1234 Android Street",
+      "extendedAddress": "",
+      "locality": "ANDROIDVILLE",
+      "region": "IL",
+      "country": "USA",
+      "postalCode": "90210",
+      "formatted": "1234 Android Street \nANDROIDVILLE IL 90210\nUSA"
+    },
+    "Home": {
+      "category": "Home",
+      "streetAddress": "1234 Android Street",
+      "extendedAddress": "",
+      "locality": "ANDROIDVILLE",
+      "region": "IL",
+      "country": "USA",
+      "postalCode": "90210",
+      "formatted": "1234 Android Street \nANDROIDVILLE IL 90210\nUSA"
+    }
+  },
+  "links": {                                        //Probably ignore these
+    "profiles:edit": {
+      "href": "https://mapi.discoverbank.com/api/profiles",
+      "templated": false,
+      "allowed": [
+        "PUT"
+      ],
+      "ref": "https://mapi.discoverbank.com/api/profiles"
+    },
+    "self": {
+      "href": "https://mapi.discoverbank.com/api/profiles",
+      "templated": false,
+      "allowed": [
+        "GET"
+      ],
+      "ref": "https://mapi.discoverbank.com/api/profiles"
+    }
+  }
+}
+
+[ PUT Profile ]
+POST /api/profiles
+--- HEADERS  ---
+Authorization - Bearer {{token}}     //This could be a cookie.
+Content-Type - application/json
+X-HTTP-Method-Override - PUT
+----------------
+--- REQUEST  --- HTTP 200
+{
+  "username": "bestUserEver", //Optional -- you cant REMOVE your username so if it doesnt come in we dont care.
+  "password": "currentPassword", //Optional?? Not current functionality
+  "newPassword": "newPassword",  //Optional?? Not current functionality
+  "email": "emailz@gmail.com", // Possibly optional? you cant remove your email... probably send it anyways.
+  "phoneNumbers": {
+    "work": {
+      "category": "work",
+      "countryCode": "1",
+      "number": "2244055108",
+      "ext": "",
+      "cell": false
+    },
+	//------------------------- Remove this entire block to "delete" phone number
+    "mobile": {
+      "category": "mobile",
+      "countryCode": "1",
+      "number": "5555555555",
+      "cell": false
+    },
+	//------------------------- Remove this entire block to "delete" phone number
+    "home": {
+      "category": "home",
+      "countryCode": "1",
+      "number": "5558675309",
+      "cell": false
+    }
+  },
+  "addresses": {
+    "Mailing1": {
+      "category": "Mailing1",
+      "streetAddress": "2500 LAKE COOK ROAD",
+      "extendedAddress": "1C - INNOVATION EAST",
+      "locality": "RIVERWOODS",
+      "region": "IL",
+      "country": "USA",
+      "postalCode": "600153851"
+    },
+    "Mailing2": {
+      "category": "Mailing2",
+      "streetAddress": "1234 Android Street",
+      "extendedAddress": "",
+      "locality": "ANDROIDVILLE",
+      "region": "IL",
+      "country": "USA",
+      "postalCode": "90210",
+    },
+    "Home": {
+      "category": "Home",
+      "streetAddress": "1234 Android Street",
+      "extendedAddress": "",
+      "locality": "ANDROIDVILLE",
+      "region": "IL",
+      "country": "USA",
+      "postalCode": "90210"
+    }
+  }
+}
+--- RESPONSE ---
+//Same as GET ++
+{
+    ...
+	"message": "Success! Your Discover Bank profile has been updated.",
+	...
+}
+
+
+--- Error Response --- //different kinds of errors. NOT COMPLETE LIST. Depending on how the page needs to show, these can be modified. This should not be considered a contract.
+HTTP 422
+{
+  "errors": [
+    {
+      "code": "Profiles.Invalid.Email",
+      "message": "Please enter a valid email address.",
+      "name": "email"                                   // There is an error on the email element
+    },
+    {
+      "code": "Profile.Global.Validation",                      // This is just a global error to say there are errors (1-many)
+      "message": "Your request could not be processed. Please review and update the highlighted area(s) below."
+    },
+    {
+      "code": "Profiles.PhoneNumber.Invalid",
+      "message": "Invalid Number. 10 digits required.",
+      "name": "phoneNumbers"
+    },
+    {
+      "code": "Profiles.HomeAddress.Empty",           // Cant delete home address
+      "name": "addresses"
+    },
+    {
+      "code": "Profile.Invalid.Zip",
+      "message": "Invalid ZIP code",
+      "name": "addresses.Mailing2.postalCode"        // when name is provided in this format its an inline error on this element
+    }
+  ]
+}
+
+

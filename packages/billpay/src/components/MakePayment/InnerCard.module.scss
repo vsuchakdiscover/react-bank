@@ -1,0 +1,8 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root {
+  @media #{$mobile_only} {
+    margin-left: -35px;
+  }
+  padding-top: 25px;
+}

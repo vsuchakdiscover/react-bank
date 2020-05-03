@@ -1,0 +1,24 @@
+.loadingState {
+  transition: opacity 0.2s ease-out;
+  opacity: 0.3;
+}
+
+.lightLoadingState {
+  opacity: 0;
+}
+
+.fadeinSpinner {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.loadingText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top: 60px;
+}

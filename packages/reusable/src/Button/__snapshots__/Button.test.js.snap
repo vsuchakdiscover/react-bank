@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as disabled when disabled prop is specified 1`] = `
+<button
+  className="root primary"
+  disabled={true}
+  onClick={[Function]}
+  type="button"
+>
+  Example text
+</button>
+`;
+
+exports[`renders correctly 1`] = `
+<button
+  className="root primary"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  Example text
+</button>
+`;

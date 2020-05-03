@@ -1,0 +1,81 @@
+@import "../../reusable/src/scss/variables";
+
+body {
+  font-weight: normal;
+  font-family: "Meta Web Normal";
+
+  strong {
+    font-family: "Meta Web Bold";
+  }
+
+  sup {
+    font-size: 12px;
+  }
+}
+
+.spinnerWrapper {
+  margin: calc(50vh - 50px) auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert {
+  margin: auto;
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.section {
+  padding: 40px 0;
+  background-image: linear-gradient(351deg, #2477ab, #005389);
+
+  @media #{$tablet} {
+    padding-top: 0;
+  }
+}
+
+.iframe {
+  max-width: 960px;
+  height: 700px;
+  margin: 90px auto;
+  @media only screen and (max-width: 990px) {
+    margin: 50px 20px;
+  }
+}
+
+.shadowBox {
+  background: white;
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.3);
+  margin: 0 10px;
+  position: relative;
+
+  @media #{$tablet} {
+    max-width: 960px;
+    width: calc(100% - 100px);
+    margin: 0 auto;
+    margin-top: -50px;
+  }
+}
+
+.shadowBoxInner {
+  padding: 30px;
+}
+
+.gradientBorder {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-image: linear-gradient(to left, #2477ab, #005389);
+}
+
+.profileError {
+  text-align: center;
+}
+
+.oobOnLoadWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+}

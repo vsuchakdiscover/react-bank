@@ -1,0 +1,36 @@
+@import "../../../../reusable/src/scss/variables";
+
+.confirmSubtitle {
+  display: flex;
+  align-items: flex-start;
+  button {
+    @media #{$mobile_only} {
+      position: relative;
+      top: 50px;
+    }
+    margin-left: auto;
+    min-height: 30px;
+  }
+}
+
+.firstLinkButton {
+  @media #{$tablet} {
+    margin-left: -19px;
+  }
+}
+
+.statusBanner {
+  display: flex;
+  padding-bottom: 20px;
+  margin-top: 10px;
+
+  @media #{$tablet} {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin: 10px 0;
+  }
+
+  span {
+    padding-right: 10px;
+  }
+}

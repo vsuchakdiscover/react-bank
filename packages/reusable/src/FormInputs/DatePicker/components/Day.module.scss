@@ -1,0 +1,125 @@
+@import "src/scss/variables";
+
+.day {
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    background-color: $light-orange;
+  }
+
+  &:focus {
+    outline: 0;
+    border: 1px solid $links;
+  }
+}
+
+.range {
+  background-color: $light-orange;
+  border-top: 1px solid $orange;
+  border-bottom: 1px solid $orange;
+}
+
+.selected,
+.startDate,
+.endDate {
+  font-size: 15px !important;
+  font-family: "Meta Web Bold";
+  font-weight: bold;
+}
+
+.selected {
+  font-size: 19px !important;
+}
+
+.selected,
+.selected.due {
+  background-color: $orange;
+  color: $white;
+
+  &:hover {
+    background-color: $orange;
+  }
+}
+
+.startDate,
+.startDate.selected,
+.endDate,
+.endDate.selected {
+  background-color: $light-orange;
+  color: $white;
+
+  &:before {
+    background: $orange;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    left: -2px;
+  }
+}
+
+.endDate,
+.endDate.selected {
+  &:before {
+    clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
+  }
+
+  span {
+    left: 2px;
+  }
+}
+
+.due {
+  font-family: "Meta Web Bold";
+  background-color: $white;
+  border: 2px solid $links;
+  color: $links;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $links;
+    color: $white;
+  }
+}
+
+.hasLabel {
+  font-size: 15px;
+  line-height: 1.1;
+}
+
+.unavailable,
+.unavailable.range {
+  background-color: $light-gray;
+  border-color: $light-gray;
+  color: $copy;
+  cursor: default;
+  border: 1px solid $light-gray;
+
+  &:hover {
+    background-color: $light-gray;
+    color: $copy;
+    cursor: not-allowed;
+  }
+}
+
+.green {
+  background-color: green;
+}

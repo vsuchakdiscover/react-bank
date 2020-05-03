@@ -1,0 +1,67 @@
+@import "../../../../reusable/src/scss/variables";
+
+.root {
+  width: auto;
+  height: 160px;
+  margin-right: 23px;
+  border-radius: 6px;
+  border: solid 1px $light-gray;
+}
+
+.header {
+  color: $dark-gray;
+  background-color: $ice-blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 49px;
+  font-size: 15px;
+
+  .date {
+    text-transform: uppercase;
+    padding-left: 10px;
+  }
+
+  .icon {
+    height: 14px;
+  }
+
+  .status {
+    padding-right: 10px;
+  }
+}
+
+.body {
+  text-align: center;
+  padding-top: 20px;
+  color: #293033;
+
+  .amount {
+    font-size: 19px;
+    line-height: 1.47;
+  }
+
+  .pipe {
+    color: $light-gray;
+    margin: 0 5px 0 5px;
+  }
+}
+
+.accountNameContainer {
+  display: inline-flex;
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+    display: inline-block;
+  }
+
+  &.hasAccountNumber {
+    span {
+      padding-right: 5px;
+      max-width: 150px;
+    }
+  }
+}

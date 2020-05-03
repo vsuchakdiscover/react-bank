@@ -1,0 +1,11 @@
+@import "src/scss/variables";
+
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.mask {
+  font-size: 8px;
+  color: $dark-gray;
+}

@@ -1,0 +1,26 @@
+@import "src/scss/variables";
+
+.label {
+  padding-bottom: 5px;
+  font-size: $fontSizeMedium;
+  color: $copy;
+  font-family: $fontFamily;
+  font-weight: bold;
+}
+
+.linkText:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.optional {
+  cursor: pointer;
+  color: $dark-gray !important;
+  font-size: 0.8em;
+  line-height: 1.33333em;
+  color: #293033;
+}
+
+.sublabel {
+  font-weight: normal;
+}

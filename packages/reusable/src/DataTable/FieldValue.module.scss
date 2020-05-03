@@ -1,0 +1,26 @@
+@import "src/scss/variables";
+
+.root {
+  margin-bottom: 30px;
+
+  &:last-child {
+    @media #{$tablet} {
+      margin-bottom: 10px;
+    }
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+}
+
+dt {
+  &.mobileOnlyLabel {
+    display: block;
+    @media #{$tablet} {
+      display: none;
+    }
+  }
+}

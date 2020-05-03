@@ -1,0 +1,23 @@
+@import "src/scss/variables";
+
+.root {
+  padding: 20px 10px;
+  width: 100%;
+  min-height: 68px;
+  background-color: $white;
+  @media #{$tablet} {
+    padding: 20px;
+  }
+}
+
+.default {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.orange {
+  border: 1px solid $light-gray;
+  border-left: 5px solid $orange;
+  @media #{$tablet} {
+    border-left-width: 10px;
+  }
+}

@@ -1,0 +1,28 @@
+@import "src/scss/variables";
+
+.isRelative {
+  position: relative;
+}
+
+.range {
+  @media #{$tablet} {
+    display: flex;
+    div[role="dialog"] {
+      top: 85px;
+    }
+  }
+}
+
+.datePicker {
+  width: 100%;
+
+  @media #{$tablet} {
+    max-width: 300px;
+  }
+}
+
+.startDate {
+  @media #{$tablet} {
+    margin-right: 169px;
+  }
+}

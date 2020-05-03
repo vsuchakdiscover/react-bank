@@ -1,0 +1,50 @@
+@import "src/scss/variables";
+
+.root {
+  font-family: "Meta Web Normal";
+  font-weight: normal;
+  p {
+    margin-bottom: 5px;
+    font-family: "Meta Web Bold";
+  }
+  a,
+  button {
+    color: $links;
+    position: relative;
+    display: block;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    line-height: 15px;
+    border-radius: 0;
+    @media #{$tablet} {
+      display: inline-block;
+      padding: 10px 19px;
+      margin-bottom: 0;
+      &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 2px;
+        background: $light-gray;
+        top: 6px;
+        right: 0px;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.links {
+  display: inline-block;
+}
+
+.links a:first-child {
+  @media #{$tablet} {
+    padding-left: 0;
+  }
+}

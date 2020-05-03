@@ -1,0 +1,115 @@
+@import "src/scss/variables";
+
+.container {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+
+  &:after {
+    content: "";
+    min-height: inherit;
+    font-size: 0;
+  }
+
+  @media #{$tablet} {
+    max-width: 300px;
+  }
+}
+
+.container {
+  .chevron {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    z-index: 1;
+    transform: translateY(-50%);
+    transition: transform 150ms ease-out;
+  }
+
+  select {
+    width: 100%;
+    position: relative;
+    background: transparent;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0px;
+    border: solid 1px $light-gray;
+    outline: 0;
+    font-size: 15px;
+    padding: 21px 14px 8px 10px;
+    z-index: 7;
+    line-height: 19px;
+    color: transparent;
+    transition: box-shadow 150ms ease-out, border 150ms ease-out;
+    white-space: pre-wrap;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &.focused {
+      box-shadow: 0 0 4px 1px rgba(76, 165, 221, 0.39);
+      border: solid 1px #4ca5dd;
+
+      &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 $copy;
+      }
+    }
+
+    option {
+      padding: 0;
+      color: $copy;
+    }
+
+    &.visibleText {
+      color: $copy;
+    }
+  }
+
+  &.error {
+    img {
+      right: 50px;
+    }
+
+    select {
+      border: solid 1px $error;
+    }
+  }
+}
+
+.selectWrapper {
+  width: 100%;
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  top: 17px;
+  left: 10px;
+  line-height: 15px;
+  font-size: 15px;
+  margin: 0;
+  color: $dark-gray;
+  z-index: 8;
+  transition: transform 150ms ease-out, font-size 150ms ease-out,
+    -webkit-transform 150ms ease-out;
+
+  &.hasSelectedValue {
+    font-size: 12px;
+    transform: translateY(-75%);
+  }
+
+  &:hover {
+    cursor: text;
+  }
+}
+
+.errorIcon {
+  padding-left: 10px;
+}
